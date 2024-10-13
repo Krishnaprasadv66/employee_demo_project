@@ -98,7 +98,7 @@ def employees(request):
     elif request.method == 'PUT':
         data = request.data
         try:
-            obj = Employees.get(id=data['id'])
+            obj = Employees.objects.get(id=data['id'])
 
         except Employees.DoesNotExist:
             return Response ({"error": "employee not found"}, status=404)
